@@ -4,21 +4,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">{{ __('Verifikasi Alamat Email Anda') }}</h4>
+                </div>
 
                 <div class="card-body">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        <div class="alert alert-success text-center" role="alert">
+                            {{ __('Tautan verifikasi baru telah dikirim ke alamat email Anda.') }}
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    <p class="text-center text-muted">
+                        {{ __('Sebelum melanjutkan, harap periksa email Anda untuk tautan verifikasi.') }}
+                    </p>
+                    <p class="text-center text-muted">
+                        {{ __('Jika Anda tidak menerima email tersebut') }},
+                    </p>
+
+                    <form class="text-center" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-success mt-3">
+                            {{ __('Klik di sini untuk mengirim ulang') }}
+                        </button>
                     </form>
                 </div>
             </div>
