@@ -28,4 +28,4 @@ class CreateContohsTable extends Migration
     {
         Schema::dropIfExists('contohs');
     }
-}
+} 
